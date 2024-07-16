@@ -1,3 +1,5 @@
+//hosted at https://notes-u7b0.onrender.com/api/notes
+
 import express from "express";
 import cors from "cors";
 import dotenv from "dotenv";
