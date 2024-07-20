@@ -10,8 +10,9 @@ const corsOptions = {
 	origin: "http://localhost:5173",
 	optionsSuccessStatus: 200, // some legacy browsers (IE11, various SmartTVs) choke on 204
 };
-app.use(express.json());
 app.use(cors(corsOptions));
+app.use(express.json());
+app.use(express.static("dist"));
 
 let notes = [
 	{
@@ -80,9 +81,7 @@ app.patch("/api/notes/:id", (req, res) => {
 	const id = Number(req.params.id);
 	let note = notes.find((note) => note.id === id);
 	note = { ...req.body };
-	console.log(req.body);
 	notes = notes.map((n) => (n.id === id ? note : n));
-	console.log(note);
 	res.status(200).json(note);
 });
 
