@@ -1,8 +1,6 @@
-PATCH http://localhost:3001/api/notes/2
+PATCH http://localhost:3001/api/notes/66c831ed0708a7a660cbffa6
 Content-Type: application/json
 
 {
-    "id": 2,
-    "content": "Browser can execute only JavaScript",
-    "important": false
+    "important" : true
 }
